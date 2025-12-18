@@ -115,12 +115,12 @@ public abstract class AutoFarmView {
             html.replace("%" + field + "_state%", "<edit width=\"" + size + "\" var=\"new" + field + "\"><img height=\"5\">");
         }
 
-        html.replace("%" + field + "_action%", "bypass view_autofarm save " + field + " $new" + field);
+        html.replace("%" + field + "_action%", "bypass autofarm save " + field + " $new" + field);
         html.replace("%" + field + "_value%", "Save");
     }
 
     private void applyViewSection(NpcHtmlMessage html, String field, String value, boolean requiresResize) {
-        html.replace("%" + field + "_action%", "bypass view_autofarm edit " + field);
+        html.replace("%" + field + "_action%", "bypass autofarm edit " + field);
         html.replace("%" + field + "_value%", "Edit");
 
         if (requiresResize) {
@@ -163,7 +163,7 @@ public abstract class AutoFarmView {
         html.replace("%bg_icon%" + slot, "L2UI_CH3.refineslot2");
         html.replace("%bg_width%" + slot, 36);
         html.replace("%bg_height%" + slot, 48);
-        html.replace("%action%" + slot, "bypass view_autofarm remove " + slot);
+        html.replace("%action%" + slot, "bypass autofarm remove " + slot);
     }
 
     private void applyEmptySlot(NpcHtmlMessage html, int slot, boolean hasSkills) {
@@ -175,7 +175,7 @@ public abstract class AutoFarmView {
         html.replace("%bg_icon%" + slot, "L2UI_CH3.multisell_plusicon");
         html.replace("%bg_width%" + slot, 31);
         html.replace("%bg_height%" + slot, 30);
-        html.replace("%action%" + slot, "bypass view_autofarm skills 1");
+        html.replace("%action%" + slot, "bypass autofarm skills 1");
     }
 
     private String getIconSkill(int skillId) {
@@ -219,7 +219,7 @@ public abstract class AutoFarmView {
                         .append(skill.getName())
                         .append("</font></td>");
                 sb.append("<td>");
-                sb.append("<button action=\"bypass view_autofarm select ")
+                sb.append("<button action=\"bypass autofarm select ")
                         .append(skillId).append(' ').append(page)
                         .append("\" width=32 height=32 ")
                         .append("back=\"L2UI_CH3.mapbutton_zoomin2\" ")
@@ -240,7 +240,7 @@ public abstract class AutoFarmView {
         sb.append("<table width=100% bgcolor=000000><tr>");
 
         sb.append("<td align=left width=70>")
-                .append("<button action=\"bypass view_autofarm page ")
+                .append("<button action=\"bypass autofarm page ")
                 .append(prevPage).append(' ').append(page)
                 .append("\" back=\"L2UI_CH3.shortcut_prev_down\" ")
                 .append("fore=\"L2UI_CH3.shortcut_prev\" width=16 height=16>")
@@ -251,7 +251,7 @@ public abstract class AutoFarmView {
                 .append("</font></td>");
 
         sb.append("<td align=right width=70>")
-                .append("<button action=\"bypass view_autofarm page ")
+                .append("<button action=\"bypass autofarm page ")
                 .append(nextPage).append(' ').append(page)
                 .append("\" back=\"L2UI_CH3.shortcut_next_down\" ")
                 .append("fore=\"L2UI_CH3.shortcut_next\" width=16 height=16>")
