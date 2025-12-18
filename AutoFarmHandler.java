@@ -18,7 +18,7 @@ import static gameserver.custom.model.HunterImpl.MAX_SKILLS;
 public class AutoFarmHandler extends AutoFarmView implements IBypassHandler {
 
     protected static final CLogger LOGGER = new CLogger(AutoFarmHandler.class.getName());
-    private static final String[] VIEW = new String[]{"autofarm"};
+    private static final String[] VIEW = { "autofarm" };
 
     @Override
     public boolean useBypass(String command, Player player, Creature creature) {
